@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&display=swap');
+
+:root {
+    --bright-orange: hsl(31, 77%, 52%);
+    --dark-cyan: hsl(184, 100%, 22%); 
+    --very-dark-cyan: hsl(179, 100%, 13%);  
+    --paragraph-white: hsla(0, 0%, 100%, 0.75);
+    --light-grey: hsl(0, 0%, 95%);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    font-family: 'Lexend Deca', sans-serif;
+    color: var(--paragraph-white);
+    background-color: var(--light-grey);
+    height: 100%;
+}
+
+main {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    color: var(--light-grey);
+    font-family: 'Big Shoulders Display', sans-serif;
+    text-transform: uppercase;
+    font-size: 2.5em;
+}
+
+p {
+    font-size: 0.9375rem;
+    line-height: 1.5rem;
+}
+
+.card-component {
+    display: flex;
+    align-items: center;
+    justify-content: center;  
+    width: 85%;
+    max-width: 57.5rem;
+    margin: auto; 
+}
+
+.card-section {   
+    padding: 3.1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    max-height: 29rem;
+    background-color: var(--accent-colour, #333);
+}
+
+.card-section img {
+    width: 64px;
+    height: 40px;
+}
+
+.card-section .btn, 
+.card-section .btn:active, 
+.card-section .btn:visited {
+    text-decoration: none;
+    text-align: center;
+    background-color: var(--light-grey);
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    border: none;
+    /* Only works inside flex container */
+    /* margin-top: auto; */
+    width: 9rem;
+    font-size: 0.8rem;
+    color: var(--accent-colour, #333);
+}
+
+.card-section .btn:hover 
+ {
+    background-color: transparent; 
+    border: 2px solid var(--light-grey);
+    color: var(--light-grey);
+}
+
+.card-section.left {
+    --accent-colour: var(--bright-orange);
+    border-radius: 5px 0 0 5px;
+}
+
+.card-section.middle {
+    --accent-colour: var(--dark-cyan);
+}
+
+.card-section.right {
+    --accent-colour: var(--very-dark-cyan);
+    border-radius: 0 5px 5px 0;
+}
+
+@media (max-width: 1100px) {
+    main {
+        display: block;
+    } 
+
+    .card-component {
+        flex-direction: column;
+        margin: 5rem auto;
+        max-width: 20.5rem;        
+    }
+
+    .card-section {
+        min-height: 29rem;
+        max-height: none;
+    }
+
+    .card-section.left {
+        border-radius: 5px 5px 0 0;
+    }
+    
+    .card-section.right {
+        border-radius: 0 0 5px 5px;
+    }
+}

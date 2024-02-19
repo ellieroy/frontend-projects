@@ -1,0 +1,80 @@
+@media (min-width: 770px) {
+    
+    h2 {
+        font-size: 1.1em;
+    }
+
+    h3 {
+        font-size: 0.9em;
+    }
+
+    input {
+
+        &:hover {
+            outline: none;
+            border: $strong_cyan 2px solid;
+            color: $dark_cyan;
+            cursor: pointer;
+        }
+    }
+
+    .card {
+        max-width: 57.5em;
+        display: flex;
+        justify-content: space-between;
+        padding: 3em;
+    }
+
+    .section-1 {
+
+        flex-basis: 47%;
+
+        .container {
+            margin-bottom: 2.5em;
+        }
+    
+        .input {
+            margin-bottom: 2.5em;
+        }
+
+        .options {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .option {
+
+            &:hover {
+                background-color: lighten($strong_cyan, 35%);
+                color: $dark_cyan;
+                cursor: pointer;
+                transition: 0.2s ease-in;
+            }
+        }
+    }
+
+    .section-2 {
+        flex-basis: 47%;
+        padding: 2em;
+
+        .output {
+
+            .sum {
+                font-size: 2em;
+            }
+        }
+    }
+
+    #reset {
+        
+        margin-top: 6em; 
+        margin-bottom: 1em;
+
+        &:hover {
+            background-color: lighten($strong_cyan, 35%) !important;
+            color: $dark_cyan;
+            cursor: pointer;
+            transition: 0.2s ease-in;
+        }
+    }
+    
+}
